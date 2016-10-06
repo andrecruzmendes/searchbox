@@ -32,7 +32,7 @@
       
       if (params) query_string = [params.replace('&amp;', '&'), query].join('&')
       
-      $.get([base, '?', query_string].join(''), function(data) {
+      $.get([base, '?', 'time=', ((new Date()).getTime()), '&', query_string].join(''), function(data) {
         $($.searchbox.settings.dom_id).html(data)
       })
     },
